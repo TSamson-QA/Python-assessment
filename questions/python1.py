@@ -36,7 +36,15 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	return ""
+	length1 = len(input1)
+	length2 = len(input2)
+	if length1 > length2:
+		return input1
+	elif length1 < length2:
+		return input2
+	else:
+		return (input1 + " " + input2)
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -60,7 +68,14 @@ def one(input1, input2):
 	# No hints for this question
 
 def two(arg1):
+	if ((arg1 % 3) == 0) and ((arg1 % 5) != 0):
+		return "fizz"
+	elif ((arg1 % 5) == 0) and ((arg1 % 3 != 0)):
+		return "buzz"
+	elif ((arg1 % 3) == 0) and ((arg1 % 5) == 0):
+		return "fizzbuzz"
 	return "null"
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -79,7 +94,13 @@ def two(arg1):
 	# How do we ignore case in a String? help(str) may offer some insight.
 
 def three(input):
-    return 0
+	vowelcount = 0
+	input = input.lower()
+	for vowel in input:
+		if vowel in "aeiou":
+			vowelcount = vowelcount+1
+	return vowelcount
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -102,7 +123,15 @@ def three(input):
 
 
 def four(input):
-    return False
+	if ("ei" in input) and ("cei" in input):
+		return True
+	elif ("ie" in input) and ("cie" in input):
+		return False
+	elif ("ei" in input) and ("cei" not in input):
+		return False
+	elif ("ie" in input) and ("cie" not in input):
+		return True
+	return False
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -122,7 +151,12 @@ def four(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def five(input):
-	return 1
+	calc = 1
+	while input > 0:
+		calc = input * calc
+		input = input-1
+
+	return calc
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
